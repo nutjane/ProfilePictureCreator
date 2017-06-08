@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TEDxMahidolU - Profile Creator</title>
+
+        <meta name="description" content="TEDxMahidolU Profile Creator">
+        <meta property="og:title" content="TEDxMahidolU Profile Creator">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="TEDxMahidolU Profile Creator">
+
+        <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="Stylesheet" type="text/css" href="css/croppie.css" />
+        <link rel="Stylesheet" type="text/css" href="css/pfcreator.css" />
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-100006796-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </head>
+    <body>
+        <div class="top-border"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 header text-left">
+                    <img src="images/tedxmulogo_sm.png" alt="TEDxMU" width="350" class="logo img-responsive">
+                </div>
+            </div>
+            <div class="row equal">
+                <div id="step1" class="col-xs-12 col-sm-6 col-sm-offset-3 sectionfull">
+                    <h3>① เลือกรูป</h3>
+                    <div class="actions">
+
+                        <div class="upload-msg">
+                            <a class="btn file-btn margin-bottom-20">
+                                <span><i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i> Browse</span>
+                                <input type="file" id="upload" value="Choose a file" accept="image/*" />
+                            </a>
+
+                            Upload a file to start framing
+
+                        </div>
+
+                    </div>
+                    <div class="mobile-notice hidden-md hidden-lg">
+                      <span>
+                          สำหรับผู้ใช้งานผ่านโทรศัพท์มือถือ:<br>หากเลือกรูปไม่ได้ โปรดเข้าใช้งานผ่าน Safari หรือ Chrome
+                      </span>
+                    </div>
+
+                </div>
+                <div id="step2" class="col-xs-12 col-sm-6 col-sm-offset-3 sectionfull hidden">
+                    <h3>② ปรับแต่ง</h3>
+                    <div class="upload-demo">
+                        <div style="height: 350px;">
+                            <div class="upload-msg">
+                                Upload a file to start framing
+                            </div>
+                            <div class="upload-demo-wrap">
+                                <div style="position: absolute; width: 280px; height: 280px; margin-left: 10px; margin-top: 10px; z-index: 10; pointer-events: none;">
+                                    <img id="profile-frame-design-1" width="280" src="images/frame1.png" style="display: inline-block;">
+                                    <img id="profile-frame-design-2" width="280" src="images/frame2.png" style="display: none;" >
+                                </div>
+                                <div id="upload-demo"></div>
+                            </div>
+                        </div>
+                        <div class="text-center margin-bottom-20">
+                            <button class="upload-result text-center"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i> สร้างรูป</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="step3" class="col-xs-12 col-sm-6 col-sm-offset-3 sectionfull hidden">
+                    <h3>③ บันทึก</h3>
+                    <div id="result-wrapper">
+                        <div class="result-wrapper">
+                            <canvas width="800" height="800" id="result-canvas" style="display: none;"></canvas>
+                            <div class="result-image-wrapper">
+                                <div class="result-image-output text-center"></div>
+                            </div>
+                            <div class="mobile-notice hidden-md hidden-lg">
+                              <span>
+                                  สำหรับผู้ใช้งานผ่านโทรศัพท์มือถือ:<br>โปรดแตะค้างไว้ที่รูปเพื่อดาวน์โหลด 
+                              </span>
+                            </div>
+                            <div class="result-text-wrapper text-center margin-bottom-20 hidden">
+                                <a id="download" download="TEDxMU_profile.jpg" class="btn hidden-md-down" href="javascript:void(0);" target="_blank"><i class="glyphicon glyphicon-download" aria-hidden="true"></i> ดาวน์โหลด</a>
+                                <a class="btn hidden-md-down" href="javascript:window.location.href=window.location.href" target="_blank"><i class="glyphicon glyphicon-refresh" aria-hidden="true"></i> เริ่มใหม่</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+
+        <script src="js/croppie.js"></script>
+        <script src="js/pfcreator.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!--
+        <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="bower_components/exif-js/exif.js"></script>
+    -->
+        <script>
+            ProfileCreator.init();
+        </script>
+
+    </body>
+</html>
